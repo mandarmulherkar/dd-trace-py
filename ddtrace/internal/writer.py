@@ -69,7 +69,6 @@ class AgentWriter(_worker.PeriodicWorkerThread):
             self._trace_queue.put(spans)
 
     def flush_queue(self):
-        pass
         try:
             traces = self._trace_queue.get(block=False)
         except Empty:
